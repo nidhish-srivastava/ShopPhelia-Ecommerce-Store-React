@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+/* Modal CSS */
+*{
+ box-sizing: border-box;
+}
+body{
+ margin: 0;
+ padding: 0;
+ font-family: 'Roboto';
+ background-color: rgb(29, 20, 20);
+ color: white;
+
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+    width: 1.2rem;
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color:rgba(255, 255, 255, 0.863);
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: rgb(10, 112, 236);
+    border-radius: 1rem;
+    border: .4rem solid transparent; /*This property wont work until the below waali doesnt work*/
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(49, 49, 100);
+  }
+
+  /* Loader */
+.loader {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #fff;
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #ff3d00;
+    box-shadow: 30px 0 0 #fff;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+  
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #ff3d00;
+    }
+    50% {
+      box-shadow: 0 0 0 #ff3d00;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #ff3d00;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #fff;
+    }
+    50% {
+      box-shadow: 0 0 0 #fff;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #fff;
+      margin-top: 0;
+    }
+  }
+  
+  /* Header */
+  .category{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  
+  .category li{
+    cursor: pointer;
+    list-style: none;
+    background-color: rgb(121, 121, 255);
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+  .category li a{
+    text-decoration: none;
+    transition: 0.3s;
+    word-spacing: 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: inherit;
+    margin: 0.6rem;
+  }
+  
+  .category a:hover,
+  .category a:active,
+  .category a.active {
+    color: yellow;
+    font-weight: 500;
+  } 
+  
+  
+  /* Main Content */
+  
+  .category-content{
+    /* margin-top: 2rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .link{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .category-content-card{
+    margin: auto;
+    font-family: 'Roboto';
+    width: 300px;
+    box-shadow: 0px 1px 3px 1px rgba(23, 158, 162, 0.971);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  
+  .centered{
+    text-align: center;
+    font-family: 'Montserrat';
+    margin-top: 4px;
+  }
+  
+  /* Single Product */
+  
+.SingleMovieCard{
+  cursor: pointer;
+  border: 1px solid rgb(184, 172, 64);
+  padding: 0 3rem;
+}
+
+.singleMovieContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 3rem;
+}
+.left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.right{
+  margin-top: 6rem;
+  padding: 1.2rem;
+}
+p{
+  margin-top: 3rem;
+  font-size: 1.4rem;
+}
+
+.l{
+  color: inherit;
+  text-decoration: none;
+}
+
+.goBackLink{
+  width: fit-content;
+  color: inherit;
+  font-size: 1.4rem;
+  text-decoration: none;
+  padding: 1rem;
+  margin: auto;
+  background-color: rgb(31, 181, 31);
+  border-radius: 1rem;
+}
+
+/* Header Container */
+.headerContainer{
+  background-color: rgba(5, 5, 226, 0.597);
+  color: white;
+  /* font-size: 2rem; */
+  padding: 0 1rem;
+  height: 8vh;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+ 
+ .category-label{
+  /* margin: auto; */
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.searchContainer{
+   outline: none;
+   background-color: white;
+   border-radius: 1rem;
+
+}
+.search-icon{
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  color: black;
+}
+.searchBar{
+  font-size: 1.2rem;
+  padding: 0.61rem;
+  border-radius: 1rem;
+   outline: none;
+   border: none;
+   background-color: inherit;
+}
+
+.sortContainer{
+  padding: 0.8rem;
+}
+.sortContainer button{
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  margin: 0 1rem;
+}
+
+.cart-icon{
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+
+.cart-item-quantity{
+  position: absolute;
+  font-size: 1.3rem;
+  bottom: 0.8rem;
+  left: 2rem;
+}
+
+
+/* Cart route CSS */
+
+.cart-main-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+}
+
+.cart-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: blue; */
+  position: relative;
+}
+
+
+.img{
+  width: 100%;
+  height: 300px;
+}
+
+
+.right2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: gray; */
+  font-size: 1.2rem;
+}
+.cart-add-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: green; */
+}
+
+
+.add-cart-btn{
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  border: none;
+  /* margin-top: 1rem; */
+  /* margin-left: 5.4rem; */
+  /* margin-bottom: 1rem; */
+  transition: .1s;
+  cursor: pointer;
+}
+.add-cart-btn:hover{
+  box-shadow: 0 0px 3px 1px white;
+  background-color: black;
+  color: white;
+}
+
+.bill{
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: green;
+}
+
+.delete-icon{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.ADD-main-btn{
+  padding: 0.7rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+}
+
