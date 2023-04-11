@@ -48,7 +48,7 @@ const totalCartItemsHandler = () =>{
         for(const item in cartItems){  //* Looping though object
             if(cartItems[item]>0){
                 let itemInfo = allData.find((product)=>product.id===Number(item)) //* id product ki humaare item ke equal honi chahiye,coz woh bhi id represent kr rha
-                if(itemInfo){ //* NOTE  --> THIS LOGIC IS BY ME AND IS INSANE,if not  used,it will show undefined,coz item aint there,how will use find some
+                if(itemInfo){ //* NOTE  --> if not  used,it will show undefined,coz item aint there,how will use find some
                     totalAmount += cartItems[item]*itemInfo.price  //* That item*price  , itemInfo is the required array which has the products added to the cart
                 }
             }
@@ -57,37 +57,16 @@ const totalCartItemsHandler = () =>{
     } 
     
     const deleteItem = (id) =>{
-    //     console.log(id)   THIS IS JUST FOR TESTING 
-    //    const wholeArray =  Object.entries(cartItems)
-    //    console.log("whole array",wholeArray)
-    //    const filteredArray = wholeArray[id]
-    //    console.log(filteredArray)
-    //    if(filteredArray[0]==id){
-    //     console.log(true) 
-    //    }
+
  
        const updatedItems = allData.filter((item,i)=>i+1!==id)
        setAllData(updatedItems)
        console.log(updatedItems)
 
-    //* NEW PROBLEM,WHEN WE NAVIGATE BACK,I WANT THAT NUMBER OF ITEMS ADDED,SHUD NOW AGAIN BE ZERO
-
-    setCartItems((prev)=>({...prev,[id]:0}))  //* I am setting it 0
-
-
- 
-       
-
-       
-
-       
+    //* NEW PROBLEM,WHEN WE NAVIGATE BACK,I WANT THAT NUMBER OF ITEMS ADDED,SHUD NOW AGAIN BE ZERO,so we will do this
+    setCartItems((prev)=>({...prev,[id]:0}))  //* I am setting it 0 
     }
-
-   
-
     
- 
-
     const final = {
         data,
         dataDetail,
