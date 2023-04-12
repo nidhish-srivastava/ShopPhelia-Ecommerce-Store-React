@@ -36,6 +36,9 @@ function Header() {
         <h1 className='logo'>
       ShopPhelia
       </h1>
+      <span className='home-btn'>
+      <i class="fa fa-home"></i>
+      </span>
         </Link>
         <div className='searchContainer'>
             <input type="search" className='searchBar' value={searchInput} onChange={(e)=>searchHandler(e.target.value)} />
