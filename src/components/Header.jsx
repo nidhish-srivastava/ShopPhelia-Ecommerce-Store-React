@@ -15,7 +15,7 @@ function Header() {
     })
   }
 
-  //* THIS LOGIC IS FUCKING SEXY,coz we are searching in array,it first convcerts it into object,then again makes it an array using join method
+  //* We are searching in array,it first convcerts it into object,then again makes it an array using join method
   const searchHandler = (input) =>{
         setSearchInput(input)
         console.log(searchInput)
