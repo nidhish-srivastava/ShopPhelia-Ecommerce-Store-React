@@ -4,18 +4,17 @@ import { useArrayGlobalhook } from '../context/context'
 
 function CategoryContent() {
     const {dataDetail,setDataDetail,cartItems,addToCart,removeFromCart} = useArrayGlobalhook()
-    // console.log(dataDetail)
+    
     // * SORTING LOW TO HIGH
     const filterLowToHigh =()=>{
-           const filtered = [...dataDetail].sort((a,b)=>a.price-b.price)  //* we are mutating the state,which we dont want,so we destructure it in a new array
-        //    const filtered = dataDetail.sort((a,b)=>a.price-b.price)
-        //    console.log(filtered)
+           //* .sort method overrides the original array,this means,we are mutating the statewhich we dont want,so we destructure it in a new array
+        // const filtered = dataDetail.sort((a,b)=>a.price-b.price) 
+           const filtered = [...dataDetail].sort((a,b)=>a.price-b.price) 
            setDataDetail(filtered)
     } 
     //* SORTING HIGH TO LOW
     const filterHighToLow = () =>{
         const filtered = [...dataDetail].sort((a,b)=>b.price-a.price)
-        // console.log(filtered)
         setDataDetail(filtered)
     }
 
