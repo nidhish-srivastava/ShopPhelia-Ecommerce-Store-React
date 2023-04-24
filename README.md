@@ -4,5 +4,5 @@ Home page displays all the items
 
 Under category, we can sort items from low to high or high to low 
 
-Made the cart logic of adding,removing items and total amount without using Redux or useReducer  :)
+Made the cart logic of adding,removing items and total amount without using Redux or useReducer(just flexing or showing my laziness to learn Redux)  :)
 
